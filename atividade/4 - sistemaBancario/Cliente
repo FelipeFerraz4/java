@@ -1,0 +1,33 @@
+package sistemaBancario;
+
+public class Cliente {
+	
+	String titular;
+	String cpf;
+	
+	Cliente (String titular, String cpf) {
+		this.titular = titular;
+		this.cpf = cpf;
+	}
+	
+	
+	public String toString() {
+		String data = "Titular: " + this.titular + "\nCPF: " + this.cpf + "\n";
+		return data;
+	}
+	
+	
+	public boolean equals(Cliente cliente1) {
+		if(this.titular == cliente1.titular) {
+			if(this.cpf == cliente1.cpf) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}	
+}
