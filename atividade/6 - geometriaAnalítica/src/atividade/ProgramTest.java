@@ -2,7 +2,7 @@ package atividade;
 
 import java.util.Scanner;
 
-public class programTest {
+public class ProgramTest {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
