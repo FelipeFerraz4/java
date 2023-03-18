@@ -26,5 +26,11 @@ public class Ponto2d {
 	public int getCoordinateY() {
 		return this.coordinateY;
 	}
+	public void setCoordinateX(int x) {
+		this.coordinateX = x;
+	}
+	public void setCoordinateY(int y) {
+		this.coordinateY = y;
+	}
 	
 }
