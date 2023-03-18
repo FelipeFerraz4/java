@@ -31,6 +31,13 @@ public class ProgramTest {
 		System.out.println("X = " + point4.getCoordinateX());
 		System.out.println("Y = " + point4.getCoordinateY());
 		
+		Retangulo r1 = new Retangulo(point2, point4);
+		System.out.println("maior = " + r1.maiorX);
+		System.out.println("menor = " + r1.menorX);
+		System.out.println("maior = " + r1.maiorY);
+		System.out.println("menor = " + r1.menorY);
+		
+		System.out.println(r1.pontoContido(point3));
 		scanner.close();
 	}
 
