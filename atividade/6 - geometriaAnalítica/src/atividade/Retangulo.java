@@ -2,7 +2,8 @@ package atividade;
 
 public class Retangulo {
 	
-	Ponto2d point1,point2;
+	Ponto2d point1 = new Ponto2d();
+	Ponto2d point2 = new Ponto2d();
 	int maiorX, maiorY, menorX, menorY;
 	
 	//Melhoria: criar uma verificação se os construtores recebem o mesmos x ou y
@@ -58,11 +59,14 @@ public class Retangulo {
 		else
 			return false;
 	}
-	public void calculaIntersecção(Retangulo r1) {
+	public void calculaInterseccao(Retangulo r1) {
 		int tamanhoVetor1 = ((this.maiorX-this.menorX)+1) * ((this.maiorX-this.menorY)+1);
 		int tamanhoVetor2 = ((r1.maiorX-r1.menorX)+1) * ((r1.maiorX-r1.menorY)+1);
 		Ponto2d [] pontos1 = new Ponto2d[tamanhoVetor1]; 
 		Ponto2d [] pontos2 = new Ponto2d[tamanhoVetor2];
+		//coloquei o tamanho igual ao tamanhoVetor1 pois o array teria o tamanho da intesecção
+		// com isso, o maior tamanho seria no máximo o tamanho de um dos retangulo.
+		Ponto2d [] pontosInterseccao = new Ponto2d[tamanhoVetor1];
 		int count = 0;
 		
 		for(int x = this.maiorX; x >= this.menorX;x--) {
@@ -84,6 +88,22 @@ public class Retangulo {
 				count++;
 			}
 		}
+		
+		count = 0;
+		
+		for(int i = 0; i < tamanhoVetor1;i++) {
+			for(int j = 0; j < tamanhoVetor2;j++) {
+				if (pontos1[i].getCoordinateX() == pontos2[j].getCoordinateX() &&
+						pontos1[i].getCoordinateY() == pontos2[j].getCoordinateY()) {
+					Ponto2d p = new Ponto2d(pontos1[i].getCoordinateX(),pontos1[i].getCoordinateY());
+					pontosInterseccao[count] = p;
+					System.out.println(pontosInterseccao[count].getCoordinateX()+ " " +pontosInterseccao[count].getCoordinateY());
+					count++;
+				}
+			}
+		}
+		System.out.println(count);
+		
 		
 		
 		

@@ -31,8 +31,8 @@ public class ProgramTest {
 		System.out.println("X = " + point4.getCoordinateX());
 		System.out.println("Y = " + point4.getCoordinateY());
 		
-		Retangulo r1 = new Retangulo(point2, point4);
-		Retangulo r2 = new Retangulo(point1, point3);
+		Retangulo r1 = new Retangulo(-1, -1,-4,-4);
+		Retangulo r2 = new Retangulo(0,0,5,5);
 		
 		System.out.println("maior = " + r1.maiorX);
 		System.out.println("menor = " + r1.menorX);
@@ -40,7 +40,7 @@ public class ProgramTest {
 		System.out.println("menor = " + r1.menorY);
 		
 		System.out.println(r1.pontoContido(point3));
-		r1.calculaIntersecção(r2);
+		r1.calculaInterseccao(r2);
 		scanner.close();
 	}
 
