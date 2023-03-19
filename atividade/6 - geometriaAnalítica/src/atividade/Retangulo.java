@@ -58,4 +58,34 @@ public class Retangulo {
 		else
 			return false;
 	}
+	public void calculaIntersecção(Retangulo r1) {
+		int tamanhoVetor1 = ((this.maiorX-this.menorX)+1) * ((this.maiorX-this.menorY)+1);
+		int tamanhoVetor2 = ((r1.maiorX-r1.menorX)+1) * ((r1.maiorX-r1.menorY)+1);
+		Ponto2d [] pontos1 = new Ponto2d[tamanhoVetor1]; 
+		Ponto2d [] pontos2 = new Ponto2d[tamanhoVetor2];
+		int count = 0;
+		
+		for(int x = this.maiorX; x >= this.menorX;x--) {
+			for(int y = this.maiorY; y >= this.menorY;y--) {
+				Ponto2d p1 = new Ponto2d(x,y);
+				pontos1[count] = p1;
+				System.out.println(pontos1[count].getCoordinateX()+" "+pontos1[count].getCoordinateY());
+				count++;
+			}
+		}
+		 
+		count = 0;
+		
+		for(int x = r1.maiorX; x >= r1.menorX;x--) {
+			for(int y = r1.maiorY; y >= r1.menorY;y--) {
+				Ponto2d p1 = new Ponto2d(x,y);
+				pontos2[count] = p1;
+				System.out.println(pontos2[count].getCoordinateX()+" "+pontos2[count].getCoordinateY());
+				count++;
+			}
+		}
+		
+		
+		
+	}
 }

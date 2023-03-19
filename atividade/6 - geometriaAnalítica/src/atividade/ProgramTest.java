@@ -32,12 +32,15 @@ public class ProgramTest {
 		System.out.println("Y = " + point4.getCoordinateY());
 		
 		Retangulo r1 = new Retangulo(point2, point4);
+		Retangulo r2 = new Retangulo(point1, point3);
+		
 		System.out.println("maior = " + r1.maiorX);
 		System.out.println("menor = " + r1.menorX);
 		System.out.println("maior = " + r1.maiorY);
 		System.out.println("menor = " + r1.menorY);
 		
 		System.out.println(r1.pontoContido(point3));
+		r1.calculaIntersecção(r2);
 		scanner.close();
 	}
 
