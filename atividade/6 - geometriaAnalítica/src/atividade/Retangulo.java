@@ -59,7 +59,7 @@ public class Retangulo {
 		else
 			return false;
 	}
-	public void calculaInterseccao(Retangulo r1) {
+	public Retangulo calculaInterseccao(Retangulo r1) {
 		int tamanhoVetor1 = ((this.maiorX-this.menorX)+1) * ((this.maiorX-this.menorY)+1);
 		int tamanhoVetor2 = ((r1.maiorX-r1.menorX)+1) * ((r1.maiorX-r1.menorY)+1);
 		Ponto2d [] pontos1 = new Ponto2d[tamanhoVetor1]; 
@@ -73,7 +73,6 @@ public class Retangulo {
 			for(int y = this.maiorY; y >= this.menorY;y--) {
 				Ponto2d p1 = new Ponto2d(x,y);
 				pontos1[count] = p1;
-				System.out.println(pontos1[count].getCoordinateX()+" "+pontos1[count].getCoordinateY());
 				count++;
 			}
 		}
@@ -84,7 +83,6 @@ public class Retangulo {
 			for(int y = r1.maiorY; y >= r1.menorY;y--) {
 				Ponto2d p1 = new Ponto2d(x,y);
 				pontos2[count] = p1;
-				System.out.println(pontos2[count].getCoordinateX()+" "+pontos2[count].getCoordinateY());
 				count++;
 			}
 		}
@@ -97,13 +95,33 @@ public class Retangulo {
 						pontos1[i].getCoordinateY() == pontos2[j].getCoordinateY()) {
 					Ponto2d p = new Ponto2d(pontos1[i].getCoordinateX(),pontos1[i].getCoordinateY());
 					pontosInterseccao[count] = p;
-					System.out.println(pontosInterseccao[count].getCoordinateX()+ " " +pontosInterseccao[count].getCoordinateY());
 					count++;
 				}
 			}
 		}
-		System.out.println(count);
 		
+		if (count==0) return null;
+		int tamanhoArrayInterseccao = count-1;
+		int maiorX = pontosInterseccao[0].getCoordinateX();
+		int menorX = pontosInterseccao[0].getCoordinateX();
+		int maiorY = pontosInterseccao[0].getCoordinateY();
+		int menorY = pontosInterseccao[0].getCoordinateY();
+		
+		for(int i = 0; i <= tamanhoArrayInterseccao;i++) {
+			if (pontosInterseccao[i].getCoordinateX() >= maiorX && 
+					pontosInterseccao[i].getCoordinateY() >= maiorY) {
+				maiorX = pontosInterseccao[i].getCoordinateX();
+				maiorY = pontosInterseccao[i].getCoordinateY();
+			}
+			else if(pontosInterseccao[i].getCoordinateX() <= menorX && 
+					pontosInterseccao[i].getCoordinateY() <= menorY){
+				menorX = pontosInterseccao[i].getCoordinateX();
+				menorY = pontosInterseccao[i].getCoordinateY();
+			}
+		}
+		 
+		Retangulo r = new Retangulo(maiorX,maiorY,menorX,menorY);
+		return r;
 		
 		
 		
