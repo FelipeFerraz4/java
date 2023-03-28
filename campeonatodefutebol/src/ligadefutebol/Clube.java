@@ -13,6 +13,21 @@ public class Clube {
 		this.nome = nome;
 	}
 	
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getName() {
+		return this.nome;
+	}
+	public int getPontos() {
+		return this.pontos;
+	}
+	public int getSaldoGols() {
+		return this.saldoGols;
+	}
+	
+	
 	public void ganhar(int saldoGols) {
 		this.saldoGols += saldoGols;
 		this.pontos += 3;
