@@ -18,13 +18,17 @@ public class Campeonato {
 	
 	public void jogarCampeonato() {
 		
-		//fazer os encontro dos times e chamar 
-		//a função jogarPartida para cada
+		int tam = this.times.length;
+		for(int i = 0; i < tam; i++) {
+		    for(int j = 0; j < tam; j++){
+		        jogarPartida(this.times[i], this.times[j]);
+		    }   
+		}
 		
 	}
-	public void jogarPartida() {
+	public void jogarPartida(Clube firstTime, Clube secondTime) {
 		
-		//sortiar o placa e por os ponto nos clubes 
+		System.out.println(firstTime.getName() + " " + secondTime.getName());
 		
 	}
 	public Clube[] getClassificacao(){
