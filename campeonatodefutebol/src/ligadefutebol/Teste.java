@@ -17,6 +17,7 @@ public class Teste {
 			c[i] = t;
 		}
 		Campeonato copa = new Campeonato(c);
+		copa.jogarCampeonato();
 		
 		Clube [] times = copa.getTimes();
 		
