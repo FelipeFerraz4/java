@@ -34,6 +34,10 @@ public class Campeonato {
 		int secondTimeGols = (int) ( Math.random() * 5 );
 		int saldoGols = firstTimeGols - secondTimeGols;
 		
+		System.out.printf("\n%s %d x %d %s", firstTime.getName(), 
+		                    firstTimeGols, secondTimeGols, 
+		                    secondTime.getName());
+		
 		if (firstTimeGols > secondTimeGols) {
 			firstTime.ganhar(saldoGols);
 			secondTime.perder(-saldoGols);
@@ -48,7 +52,7 @@ public class Campeonato {
 		
 	}
 	
-	public Clube[] getClassificacao(){
+	public String getClassificacao(){
 
 		//método bubble sort
 		//Melhoria, mudar para um algoritmo de ordenação
@@ -74,11 +78,19 @@ public class Campeonato {
 		    }
 		}
 		
-		return this.times;
+		String leaderboard = "";
+		
+		for(int i = 0; i < tam+1; i++) {
+			leaderboard = leaderboard + "\ntimes: " + times[i].getName() + 
+					" pontos: " + times[i].getPontos() + 
+					" saldo de gols: " + times[i].getSaldoGols();
+		}
+		
+		return leaderboard;
 	}
 	
-	public Clube getCampeao() {
-		return this.times[0];
+	public String getCampeao() {
+		return this.times[0].getName();
 	}
 	
 }
