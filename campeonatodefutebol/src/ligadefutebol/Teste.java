@@ -18,22 +18,12 @@ public class Teste {
 		}
 		Campeonato copa = new Campeonato(c);
 		copa.jogarCampeonato();
-		copa.getClassificacao();
+		String leaderboard = copa.getClassificacao();
+		String win = copa.getCampeao();
 		
-		Clube [] times = copa.getTimes();
+		System.out.printf("\n\nWin: %s congratulations\n", win);
 		
-		Clube win = copa.getCampeao();
-		System.out.printf("\nWin: %s pontos: %d saldo de gols: %d\n\n", 
-		                win.getName(), win.getPontos(), win.getSaldoGols());
-		
-		int tam = times.length;
-		//System.out.println(tam);
-		
-		for(int i = 0; i < tam; i++) {
-			System.out.println("times: " + times[i].getName() + 
-					" pontos: " + times[i].getPontos() + 
-					" saldo de gols: " + times[i].getSaldoGols());
-		}
+		System.out.println(leaderboard);
 		
 		scan.close();
 	}
