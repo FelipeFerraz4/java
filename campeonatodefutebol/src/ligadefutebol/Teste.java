@@ -13,7 +13,7 @@ public class Teste {
 			Clube t = new Clube();
 			System.out.printf("Digite o nome %d time: \n", (i+1));
 			String nome = scan.next();
-			t.setNome(nome);
+			t.setName(nome);
 			c[i] = t;
 		}
 		Campeonato copa = new Campeonato(c);

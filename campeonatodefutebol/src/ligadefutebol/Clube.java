@@ -14,7 +14,7 @@ public class Clube {
 	}
 	
 	
-	public void setNome(String nome) {
+	public void setName(String nome) {
 		this.nome = nome;
 	}
 	public String getName() {
