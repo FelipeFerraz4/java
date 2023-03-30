@@ -18,8 +18,13 @@ public class Teste {
 		}
 		Campeonato copa = new Campeonato(c);
 		copa.jogarCampeonato();
+		copa.getClassificacao();
 		
 		Clube [] times = copa.getTimes();
+		
+		Clube win = copa.getCampeao();
+		System.out.printf("\nWin: %s pontos: %d saldo de gols: %d\n\n", 
+		                win.getName(), win.getPontos(), win.getSaldoGols());
 		
 		int tam = times.length;
 		//System.out.println(tam);
