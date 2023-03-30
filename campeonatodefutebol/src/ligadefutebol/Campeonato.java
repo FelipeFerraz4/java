@@ -49,8 +49,30 @@ public class Campeonato {
 	}
 	
 	public Clube[] getClassificacao(){
+
+		//método bubble sort
+		//Melhoria, mudar para um algoritmo de ordenação
+		//melhor
 		
-		//Ordenação de vetor de times
+		int tam = this.times.length - 1;
+		Clube swap;
+		
+		for(int i = 0; i < tam; i++){
+		    for(int j = 0; j < tam; j++){
+		        if (times[j].getPontos() < times[j+1].getPontos()){
+		            swap = times[j+1];
+		            times[j+1] = times[j];
+		            times[j] = swap;
+		        }
+		        else if (times[j].getPontos() == times[j+1].getPontos()) {
+		            if (times[j].getSaldoGols() < times[j+1].getSaldoGols()) {
+		                swap = times[j+1];
+		                times[j+1] = times[j];
+		                times[j] = swap;
+		            }
+		        }
+		    }
+		}
 		
 		return this.times;
 	}
