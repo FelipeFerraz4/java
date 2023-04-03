@@ -8,11 +8,12 @@ public class Teste {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("digite a quantidade de clubes do torneio:");
 		time = scan.nextInt();
+		if (scan.hasNextLine()) scan.nextLine();
 		Clube [] c = new Clube[time];
 		for (int i = 0; i < time;i++) {
 			Clube t = new Clube();
 			System.out.printf("Digite o nome %d time: \n", (i+1));
-			String nome = scan.next();
+			String nome = scan.nextLine();
 			t.setName(nome);
 			c[i] = t;
 		}

@@ -30,8 +30,8 @@ public class Campeonato {
 	}
 	
 	public void jogarPartida(Clube firstTime, Clube secondTime) {
-		int firstTimeGols = (int) ( Math.random() * 5 );
-		int secondTimeGols = (int) ( Math.random() * 5 );
+		int firstTimeGols = (int) ( Math.random() * 6 );
+		int secondTimeGols = (int) ( Math.random() * 6 );
 		int saldoGols = firstTimeGols - secondTimeGols;
 		
 		System.out.printf("\n%s %d x %d %s", firstTime.getName(), 
