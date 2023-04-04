@@ -2,7 +2,7 @@ package ligadefutebol;
 
 public class Campeonato {
 	
-	Clube [] times;
+	private Clube [] times;
 	
 	
 	public Campeonato() {

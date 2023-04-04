@@ -6,7 +6,7 @@ public class Teste {
 	public static void main(String[] args) {
 		int time;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("digite a quantidade de clubes do torneio:");
+		System.out.println("Digite a quantidade de clubes do torneio:");
 		time = scan.nextInt();
 		if (scan.hasNextLine()) scan.nextLine();
 		Clube [] c = new Clube[time];

@@ -2,9 +2,9 @@ package ligadefutebol;
 
 public class Clube {
 	
-	String nome;
-	int pontos = 0;
-	int saldoGols = 0;
+	private String nome;
+	private int pontos = 0;
+	private int saldoGols = 0;
 	
 	public Clube() {
 		
