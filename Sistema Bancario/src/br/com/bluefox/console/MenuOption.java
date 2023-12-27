@@ -1,4 +1,4 @@
-package br.com.foxblue.console;
+package br.com.bluefox.console;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class MenuOption {
     public MenuOption(Scanner scanner){
         this.scan = scanner;
     }
-    
+
     public void getMenuPrincipal() {
         int option = 1;
         do {
@@ -20,9 +20,9 @@ public class MenuOption {
             System.out.println("3 - Esqueseu a senha");
             System.out.println("0 - Finalizar Programa");
             System.out.println("Digite a opção escolhida: ");
-            
+
             option = this.scan.nextInt();
-            
+
             System.out.println();
 
             if (option == 0) {
